@@ -1,8 +1,5 @@
-<script setup lang="ts">
-import HelloWorld from '@/components/HelloWorld.vue';
-</script>
+<script setup lang="ts"></script>
 <template>
-	<div>About</div>
-	<HelloWorld :msg="'Vite+Ts+vite'"></HelloWorld>
+  <el-button type="success">Success</el-button>
 </template>
 <style scoped></style>

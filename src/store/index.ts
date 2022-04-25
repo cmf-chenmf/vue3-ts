@@ -1,15 +1,17 @@
 import { defineStore } from 'pinia';
 
-export const mainStore = defineStore('main',{
-	state:()=>{
+export const mainStore = defineStore('main', {
+	state: () => {
 		return {
-			count:0
+			count: 0
 		}
 	},
-	getters:{
-
+	getters: {
+		countGetter(state) {
+			return state.count += 10
+		}
 	},
-	actions:{
+	actions: {
 
 	}
 })
