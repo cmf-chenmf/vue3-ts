@@ -3,15 +3,15 @@
 <template>
   <div class="layout">
 		<el-container>
-      <el-aside width="200px">Aside</el-aside>
+      <el-aside width="200px"><Aside /></el-aside>
       <el-container>
-        <el-header>Header</el-header>
+        <el-header><Header /></el-header>
 				 <el-scrollbar>
 					 <el-main>
 						 <p v-for="i in 50" :key="i">{{i}}</p>
 					 </el-main>
 				 </el-scrollbar>
-        <el-footer>Footer</el-footer>
+        <el-footer><Footer /></el-footer>
       </el-container>
     </el-container>
   </div>
@@ -26,6 +26,7 @@ $borderColor:#cecece;
 		display: flex;
 		align-items: center;
 		border-bottom:1px solid $borderColor;
+		padding-left: 0;
 	}
 	.el-aside{
 		width: 256px;
@@ -36,6 +37,7 @@ $borderColor:#cecece;
 	}
 	.el-footer{
 		display: flex;
+		height: 40px;
 		align-items: center;
 		border-top: 1px solid $borderColor;
 	}

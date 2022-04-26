@@ -1,0 +1,19 @@
+{
+	"data":[
+		{
+			"name":"图表展示",
+			"component":"Echarts",
+			"path":"/echarts"
+		},
+		{
+			"name":"表格信息",
+			"component":"Table",
+			"path":"/table"
+		},
+		{
+			"name":"异常信息",
+			"component":"Error",
+			"path":"/error"
+		}
+	]	
+}
