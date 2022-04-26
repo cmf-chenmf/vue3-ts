@@ -1,14 +1,19 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { mainStore } from '@/store'
+import { storeToRefs } from 'pinia'
+const useStore = mainStore();
+const { collapse } = storeToRefs(useStore)
+</script>
 
 <template>
   <div class="layout">
 		<el-container>
-      <el-aside width="200px"><Aside /></el-aside>
+      <el-aside :style="{'width':collapse ? '60px' : '256px'}"><Aside /></el-aside>
       <el-container>
         <el-header><Header /></el-header>
 				 <el-scrollbar>
 					 <el-main>
-						 <p v-for="i in 50" :key="i">{{i}}</p>
+						 <p v-for="i in 50" :key="i">{{i}}---Main</p>
 					 </el-main>
 				 </el-scrollbar>
         <el-footer><Footer /></el-footer>
@@ -29,7 +34,8 @@ $borderColor:#cecece;
 		padding-left: 0;
 	}
 	.el-aside{
-		width: 256px;
+		// width: 256px;
+		transition: all .3s;
 		border-right:1px solid $borderColor;
 	}
 	.el-main{

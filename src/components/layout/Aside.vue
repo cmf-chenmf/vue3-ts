@@ -1,7 +1,13 @@
 <script setup lang='ts'>
 import {Location,Document,Setting,Menu as IconMenu} from '@element-plus/icons-vue';
-import Menu from '@/menu/menu.json';
-console.log(Menu.data);
+/**
+ * 使用pinia替代vuex
+ */
+import { mainStore } from '@/store'
+import { storeToRefs } from 'pinia'
+const useStore = mainStore();
+const { collapse } = storeToRefs(useStore);
+
 
 </script>
 
@@ -9,7 +15,7 @@ console.log(Menu.data);
 	<div class="aside">
 		<div class="aside-header">Aside--Header</div>
 		<div class="aside-menu">
-			 <el-menu default-active="2" class="el-menu-vertical-demo">
+			 <el-menu default-active="2" class="el-menu-vertical-demo" :collapse="collapse">
         <el-sub-menu index="1">
           <template #title>
             <el-icon><location /></el-icon>
