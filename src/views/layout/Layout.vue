@@ -2,7 +2,7 @@
 import { mainStore } from '@/store'
 import { storeToRefs } from 'pinia'
 const useStore = mainStore();
-const { collapse } = storeToRefs(useStore);
+const { collapse } = storeToRefs(useStore)
 </script>
 
 <template>
