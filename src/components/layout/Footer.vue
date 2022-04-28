@@ -11,7 +11,7 @@ onMounted(()=>{
 
 const getDatsa = async () =>{
 	const { data } = await Data.getLists();
-	console.log(data)
+	console.log(data);
 }
 const xhr = new XMLHttpRequest();
 xhr.open("get", "/mock/news");
