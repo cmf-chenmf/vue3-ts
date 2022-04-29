@@ -57,5 +57,11 @@ const { collapse } = storeToRefs(useStore);
 		border-bottom: 1px solid #cecece;
 		box-sizing: border-box;
 	}
+	.aside-menu{
+		overflow-x: hidden;
+		.el-menu{
+			border: none;
+		}
+	}
 }
 </style>
