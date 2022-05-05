@@ -9,4 +9,7 @@ export class Data{
 			}
 		})
 	}
+	// static async mockNews(){
+	// 	return axios.get("/mock/news")
+	// }
 }
