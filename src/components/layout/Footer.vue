@@ -9,7 +9,8 @@ const state = reactive({
   obj: {},
 });
 onMounted(()=>{
-	getDatsa()
+	getDatsa();
+	// mockNews();
 })
 
 /**
@@ -19,6 +20,14 @@ const getDatsa = async () =>{
 	const { data } = await Data.getLists();
 	console.log(data)
 }
+
+/**
+ * 请求mock.js创造的假数据，需要设置baseUrl为空
+ */
+// const mockNews = async () =>{
+// 	const data = await Data.mockNews();
+// 	console.log(data);
+// }
 
 // const xhr = new XMLHttpRequest();
 // xhr.open("get", "/mock/news");
