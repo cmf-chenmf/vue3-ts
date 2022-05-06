@@ -38,13 +38,13 @@ console.log(collapse);
           <el-icon><icon-menu /></el-icon>
           <span>图表页</span>
         </el-menu-item>
-        <el-menu-item index="3" disabled>
+        <el-menu-item index="3">
           <el-icon><document /></el-icon>
-          <span>Navigator Three</span>
+          <span>成功页</span>
         </el-menu-item>
         <el-menu-item index="4">
           <el-icon><setting /></el-icon>
-          <span>Navigator Four</span>
+          <span>错误页</span>
         </el-menu-item>
       </el-menu>
 		</div>

@@ -1,23 +1,25 @@
 <script setup lang="ts">
 import { mainStore } from '@/store'
 import { storeToRefs } from 'pinia'
-import { watch,ref,onMounted } from 'vue'
+import { onMounted } from 'vue'
 const useStore = mainStore();
 const { collapse } = storeToRefs(useStore);
 
-const clientWidth = ref(document.body.clientWidth);
-// console.log(clientWidth.value);
 
 /**
  * 修改窗口变化菜单自动收缩
  */
-watch(clientWidth,(newVal)=>{
-	collapse.value = newVal <= 1010;
-})
-
+// const clientWidth = ref(document.body.clientWidth);
+// watch(clientWidth,(newVal)=>{
+// 	collapse.value = newVal <= 1010;
+// })
+/**
+ * 添加浏览器被重置大小执行的事件(控制菜单收缩)
+ */
 const resizeWidth = ()=>{
 	window.onresize = ()=>{
-		clientWidth.value = document.body.clientWidth;
+		// clientWidth.value = document.body.clientWidth;
+		collapse.value = document.body.clientWidth <= 1010;
 	}
 }
 onMounted(()=>{
