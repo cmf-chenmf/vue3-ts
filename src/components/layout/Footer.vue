@@ -6,19 +6,19 @@ import { reactive, onMounted } from "vue";
 import { Data } from "@/api/api";
 
 const state = reactive({
-  obj: {},
+	obj: {},
 });
 onMounted(() => {
-  getDatsa();
-  // mockNews();
+	getDatsa();
+	// mockNews();
 });
 
 /**
  * 使用模块内的请求方法
  */
 const getDatsa = async () => {
-  const { data } = await Data.getLists();
-  console.log(data);
+	const { data } = await Data.getLists();
+	console.log(data);
 };
 
 /**
@@ -40,7 +40,8 @@ const getDatsa = async () => {
 </script>
 
 <template>
-  <div class="footer">Footer{{ Object.keys(state.obj).length }}</div>
+	<div class="footer">Footer{{ Object.keys(state.obj).length }}</div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+</style>
