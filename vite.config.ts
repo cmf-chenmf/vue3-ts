@@ -6,15 +6,15 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-		vue(),
+    vue(),
     Components({
       resolvers: [ElementPlusResolver()],
     }),
-	],
-	resolve:{
-		alias:{
-			"@": resolve(__dirname, 'src'), // 路径别名
-		},
-		extensions:['.js', '.json', '.ts']
-	}
+  ],
+  resolve:{
+    alias:{
+      "@": resolve(__dirname, 'src'), // 路径别名
+    },
+    extensions:['.js', '.json', '.ts']
+  }
 })
