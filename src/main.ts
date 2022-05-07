@@ -1,7 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from '@/router/index'
-import {createPinia } from 'pinia'
+import { createPinia } from 'pinia'
+
+//引入mock.js
 import "@/mock";
 //规范css样式
 import '@/assets/css/normalize.css'

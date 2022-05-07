@@ -1,25 +1,25 @@
 <script setup lang="ts">
-import { reactive,onMounted } from "vue";
+import { reactive, onMounted } from "vue";
 /**
  * 引入请求模块
  */
-import { Data } from '@/api/api'
+import { Data } from "@/api/api";
 
 const state = reactive({
   obj: {},
 });
-onMounted(()=>{
-	getDatsa();
-	// mockNews();
-})
+onMounted(() => {
+  getDatsa();
+  // mockNews();
+});
 
 /**
  * 使用模块内的请求方法
  */
-const getDatsa = async () =>{
-	const { data } = await Data.getLists();
-	console.log(data)
-}
+const getDatsa = async () => {
+  const { data } = await Data.getLists();
+  console.log(data);
+};
 
 /**
  * 请求mock.js创造的假数据，需要设置baseUrl为空

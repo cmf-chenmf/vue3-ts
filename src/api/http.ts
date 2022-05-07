@@ -14,13 +14,13 @@ instance.interceptors.request.use(config => {
 })
 
 
-instance.interceptors.response.use(res  => {		
-	if(res.status === 200){
+instance.interceptors.response.use(res => {
+	if (res.status === 200) {
 		return Promise.resolve(res.data)
 	}
 }, error => {
 	const { response } = error;
-	
+
 	if (response) {
 		// 请求已发出，但是不在2xx的范围
 		showMessage(response.status);           // 传入响应码，匹配响应码对应信息

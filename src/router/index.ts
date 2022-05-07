@@ -9,17 +9,17 @@ const routes = [
 		path: '/',
 		name: "App",
 		component: App,
-		redirect:'layout'
+		redirect: 'layout'
 	},
 	{
-		path:'/layout',
-		name:"Layout",
-		component:Layout
+		path: '/layout',
+		name: "Layout",
+		component: Layout
 	},
 	{
-		path:'/login',
-		name:'Login',
-		component:Login
+		path: '/login',
+		name: 'Login',
+		component: Login
 	}
 ];
 

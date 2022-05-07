@@ -32,13 +32,17 @@ onMounted(()=>{
 		<el-container>
       <el-aside :style="{'width':collapse ? '64px' : '256px'}"><Aside /></el-aside>
       <el-container>
-        <el-header><Header /></el-header>
+        <el-header>
+					<Header />
+				</el-header>
 				 <el-scrollbar>
 					 <el-main>
 						 <p v-for="i in 50" :key="i">{{i}}---Main</p>
 					 </el-main>
 				 </el-scrollbar>
-        <el-footer><Footer /></el-footer>
+        <el-footer>
+					<Footer />
+				</el-footer>
       </el-container>
     </el-container>
   </div>
