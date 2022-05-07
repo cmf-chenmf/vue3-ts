@@ -1,3 +1,9 @@
+/**
+ * 
+ * @param status 状态码
+ * 统一状态码文件
+ * @returns 
+ */
 export const showMessage = (status:string|number):string =>{
 	let message:string = '';
 	switch(status){
