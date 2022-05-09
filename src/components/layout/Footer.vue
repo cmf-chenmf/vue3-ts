@@ -18,7 +18,7 @@ onMounted(() => {
  */
 const getDatsa = async () => {
   const { data } = await Data.getLists();
-  console.log(data);
+  // console.log(data);
 };
 
 /**
