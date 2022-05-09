@@ -22,6 +22,10 @@ const resizeWidth = () => {
     collapse.value = document.body.clientWidth <= 1010;
   }
 }
+//父组件中接收数据
+const delivery = (params:string) =>{
+  console.log(params);
+}
 onMounted(() => {
   resizeWidth()
 })
@@ -31,7 +35,7 @@ onMounted(() => {
   <div class="layout">
     <el-container>
       <el-aside :style="{ 'width': collapse ? '64px' : '256px' }">
-        <Aside />
+        <Aside :msg="'Hello Vue3 Typescript'" @delivery="delivery" />
       </el-aside>
       <el-container>
         <el-header>
@@ -39,7 +43,7 @@ onMounted(() => {
         </el-header>
         <el-scrollbar>
           <el-main>
-            <p>Main</p>
+            <router-view />
           </el-main>
         </el-scrollbar>
         <el-footer>

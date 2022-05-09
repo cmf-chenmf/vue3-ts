@@ -1,58 +1,57 @@
 <script setup lang='ts'>
-import { Location, Document, Setting, Menu as IconMenu } from '@element-plus/icons-vue';
+import { defineProps,defineEmits } from 'vue'
+import { mainStore } from '@/store'
+import { storeToRefs } from 'pinia'
+import { useRouter } from 'vue-router'
+import { Location, Menu as IconMenu } from '@element-plus/icons-vue';
+
+
+
 /**
  * 使用pinia替代vuex
  */
-import { mainStore } from '@/store'
-import { storeToRefs } from 'pinia'
+
 const useStore = mainStore();
 const { collapse } = storeToRefs(useStore);
-console.log(collapse);
+// console.log(collapse);
 
+//使用router获取路由信息
+const router = useRouter();
+
+//使用props传递数据
+const props = defineProps({
+  msg:{
+    type:String,
+    default:"默认数据"
+  }
+});
+// console.log(props);
+
+//使用defineEmits向父组件中传递数据
+const emits = defineEmits(["delivery"]);
+
+const fn = () =>{
+  emits("delivery","子组件Aside传递给父组件Layout的数据")
+}
 
 </script>
 
 <template>
   <div class="aside">
-    <div class="aside-header">Aside--Header</div>
+    <div class="aside-header" @click="fn">Aside--Header</div>
     <div class="aside-menu">
-      <el-menu default-active="2" class="el-menu-vertical-demo" :collapse="collapse">
-        <el-sub-menu index="1">
-          <template #title>
-            <el-icon>
-              <location />
-            </el-icon>
-            <span>首页</span>
-          </template>
-          <el-menu-item-group title="Group One">
-            <el-menu-item index="1-1">item one</el-menu-item>
-            <el-menu-item index="1-2">item one</el-menu-item>
-          </el-menu-item-group>
-          <el-menu-item-group title="Group Two">
-            <el-menu-item index="1-3">表单页</el-menu-item>
-          </el-menu-item-group>
-          <el-sub-menu index="1-4">
-            <template #title>item four</template>
-            <el-menu-item index="1-4-1">表格页</el-menu-item>
-          </el-sub-menu>
-        </el-sub-menu>
-        <el-menu-item index="2">
+      <el-menu :default-active="router.currentRoute.value.path" class="el-menu-vertical-demo" :collapse="collapse" router>
+        <el-menu-item index="/router1">
+          <el-icon>
+            <location />
+          </el-icon>
+          <span>启用路由一</span>
+        </el-menu-item>
+        <el-menu-item index="/router2">
           <el-icon>
             <icon-menu />
           </el-icon>
-          <span>图表页</span>
-        </el-menu-item>
-        <el-menu-item index="3">
-          <el-icon>
-            <document />
-          </el-icon>
-          <span>成功页</span>
-        </el-menu-item>
-        <el-menu-item index="4">
-          <el-icon>
-            <setting />
-          </el-icon>
-          <span>错误页</span>
+          <span>启用路由二</span>
         </el-menu-item>
       </el-menu>
     </div>

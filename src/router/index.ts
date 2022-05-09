@@ -1,20 +1,29 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-const App = () => import("@/App.vue");
-const Layout = () => import("@/views/layout/Layout.vue");
+const Layout = () => import("@/views/Layout.vue");
 const Login = () => import("@/views/Login.vue");
+
+const Router1 = () => import("@/views/router1/Router.vue");
+const Router2 = () => import("@/views/router2/Router.vue");
 
 const routes = [
   {
     path: "/",
-    name: "App",
-    component: App,
-    redirect: "layout",
-  },
-  {
-    path: "/layout",
     name: "Layout",
     component: Layout,
+    redirect:"/router1",
+    children:[
+      {
+        path:"router1",
+        name:"Router1",
+        component:Router1
+      },
+      {
+        path:"router2",
+        name:"Router2",
+        component:Router2
+      },
+    ]
   },
   {
     path: "/login",
