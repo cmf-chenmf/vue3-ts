@@ -39,7 +39,7 @@ onMounted(() => {
         </el-header>
         <el-scrollbar>
           <el-main>
-            <p v-for="i in 50" :key="i">{{ i }}---Main</p>
+            <p>Main</p>
           </el-main>
         </el-scrollbar>
         <el-footer>
