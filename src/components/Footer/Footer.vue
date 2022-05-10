@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, onMounted } from "vue";
+import { reactive, onMounted,ref } from "vue";
 /**
  * 引入请求模块
  */
@@ -9,17 +9,23 @@ const state = reactive({
   obj: {},
 });
 onMounted(() => {
-  getDatsa();
+  // getData();
+  getText();
   // mockNews();
 });
 
 /**
  * 使用模块内的请求方法
  */
-const getDatsa = async () => {
+const getData = async () => {
   const { data } = await Data.getLists();
   // console.log(data);
 };
+const msg = ref<any>("");
+const getText = async () =>{
+  const result = await Data.getData()
+  msg.value = result; 
+}
 
 /**
  * 请求mock.js创造的假数据，需要设置baseUrl为空
@@ -40,7 +46,7 @@ const getDatsa = async () => {
 </script>
 
 <template>
-  <div class="footer">Footer{{ Object.keys(state.obj).length }}</div>
+  <div class="footer">{{msg}}</div>
 </template>
 
 <style scoped lang="scss">

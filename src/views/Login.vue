@@ -4,7 +4,7 @@
 
 
 <template>
-  <div class="login">Login</div>
+  <div class="login">登录页面</div>
 </template>
 
 <style scoped lang='scss'>
