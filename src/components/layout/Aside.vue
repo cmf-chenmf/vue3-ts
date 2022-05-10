@@ -1,5 +1,4 @@
 <script setup lang='ts'>
-import { defineProps,defineEmits } from 'vue'
 import { mainStore } from '@/store'
 import { storeToRefs } from 'pinia'
 import { useRouter } from 'vue-router'
