@@ -9,8 +9,8 @@ const state = reactive({
   obj: {},
 });
 onMounted(() => {
-  // getData();
-  getText();
+  getData();
+  // getText();
   // mockNews();
 });
 
@@ -19,7 +19,7 @@ onMounted(() => {
  */
 const getData = async () => {
   const { data } = await Data.getLists();
-  // console.log(data);
+  console.log(data);
 };
 const msg = ref<any>("");
 const getText = async () =>{
