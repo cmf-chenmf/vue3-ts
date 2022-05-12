@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { reactive, onMounted,ref } from "vue";
+import {reactive, onMounted, ref} from "vue";
 /**
  * 引入请求模块
  */
-import { Data } from "@/api/api";
+import {Data} from "@/api/api";
 
 const state = reactive({
   obj: {},
@@ -17,7 +17,7 @@ onMounted(() => {
  * 使用模块内的请求方法
  */
 const getData = async () => {
-  const { data } = await Data.getLists();
+  const {data} = await Data.getLists();
   console.log(data);
 };
 

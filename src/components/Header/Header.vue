@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { Expand, Fold } from "@element-plus/icons-vue";
-import { mainStore } from "@/store";
-import { storeToRefs } from "pinia";
+import {Expand, Fold} from "@element-plus/icons-vue";
+import {mainStore} from "@/store";
+import {storeToRefs} from "pinia";
 
 const useStore = mainStore();
-const { collapse } = storeToRefs(useStore);
+const {collapse} = storeToRefs(useStore);
 /**
  * 修改菜单收缩状态
  */
@@ -17,10 +17,10 @@ const isCollapse = () => {
   <div class="header">
     <div class="collapse" @click="isCollapse">
       <el-icon v-if="collapse">
-        <expand />
+        <expand/>
       </el-icon>
       <el-icon v-else>
-        <fold />
+        <fold/>
       </el-icon>
     </div>
   </div>
