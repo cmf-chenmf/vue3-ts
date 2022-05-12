@@ -5,7 +5,6 @@ import { ElMessage } from 'element-plus';
 const instance = axios.create({
   timeout: 1000 * 15,//请求超时相应
   baseURL: 'https://cnodejs.org/api/v1/',//公共url
-  // baseURL:"http://localhost:8088/api/v1/"
 })
 
 instance.interceptors.request.use(config => {

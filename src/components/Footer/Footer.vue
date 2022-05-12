@@ -10,7 +10,6 @@ const state = reactive({
 });
 onMounted(() => {
   getData();
-  // getText();
   // mockNews();
 });
 
@@ -21,11 +20,6 @@ const getData = async () => {
   const { data } = await Data.getLists();
   console.log(data);
 };
-const msg = ref<any>("");
-const getText = async () =>{
-  const result = await Data.getData()
-  msg.value = result; 
-}
 
 /**
  * 请求mock.js创造的假数据，需要设置baseUrl为空
@@ -46,7 +40,7 @@ const getText = async () =>{
 </script>
 
 <template>
-  <div class="footer">{{msg}}</div>
+  <div class="footer">Footer</div>
 </template>
 
 <style scoped lang="scss">

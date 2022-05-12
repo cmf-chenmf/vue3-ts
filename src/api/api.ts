@@ -12,9 +12,6 @@ export class Data {
       }
     })
   }
-  static async getData(){
-    return axios.get("/text")
-  }
   /**
    * 请求mock.js假数据，但baseUrl要先设置成空
    */
