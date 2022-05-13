@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import {reactive, onMounted, ref} from "vue";
+import {reactive, onMounted} from "vue";
 /**
  * 引入请求模块
  */
 import {Data} from "@/api/api";
 
+
 const state = reactive({
-  obj: {},
+  obj: [],
 });
+
 onMounted(() => {
   getData();
   // mockNews();
@@ -18,8 +20,9 @@ onMounted(() => {
  */
 const getData = async () => {
   const {data} = await Data.getLists();
-  console.log(data);
+  state.obj = data;
 };
+
 
 /**
  * 请求mock.js创造的假数据，需要设置baseUrl为空
@@ -40,7 +43,7 @@ const getData = async () => {
 </script>
 
 <template>
-  <div class="footer">Footer</div>
+  <div class="footer">Footer{{ state.obj.length }}</div>
 </template>
 
 <style scoped lang="scss">

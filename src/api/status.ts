@@ -1,11 +1,11 @@
 /**
- * 
+ *
  * @param status 状态码
  * 统一状态码文件
- * @returns 
+ * @returns
  */
 export const showMessage = (status: string | number): string => {
-  let message: string = '';
+  let message: string;
   switch (status) {
     case 400:
       message = '参数有误，请确认参数是否填写正确';

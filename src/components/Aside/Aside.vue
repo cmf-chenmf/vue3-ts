@@ -6,7 +6,7 @@ import {Location, Menu as IconMenu} from '@element-plus/icons-vue';
 
 
 /**
- * 使用pinia替代vuex
+ * 使用 大菠萝 替代 vuex
  */
 
 const useStore = mainStore();
@@ -17,13 +17,13 @@ const {collapse} = storeToRefs(useStore);
 const router = useRouter();
 
 //使用props传递数据
-const props = defineProps({
-  msg: {
-    type: String,
-    default: "默认数据"
-  }
-});
-// console.log(props);
+// const props = defineProps({
+//   msg: {
+//     type: String,
+//     default: "默认数据"
+//   }
+// });
+// console.log(props.msg);
 
 //使用defineEmits向父组件中传递数据
 const emits = defineEmits(["delivery"]);

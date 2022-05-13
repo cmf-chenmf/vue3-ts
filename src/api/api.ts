@@ -12,6 +12,7 @@ export class Data {
       }
     })
   }
+
   /**
    * 请求mock.js假数据，但baseUrl要先设置成空
    */

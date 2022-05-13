@@ -1,10 +1,10 @@
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import App from './App.vue'
 import router from '@/router/index'
-import { createPinia } from 'pinia'
+import {createPinia} from 'pinia'
 
 //引入mock.js
-import "@/mock";
+import "@/mock/mock";
 //规范css样式
 import '@/assets/css/normalize.css'
 import '@/assets/css/global.css'
