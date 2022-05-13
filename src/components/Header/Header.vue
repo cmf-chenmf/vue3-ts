@@ -41,7 +41,8 @@ const isCollapse = () => {
     cursor: pointer;
 
     &:hover {
-      background-color: #ecf0f1;
+      background-color: #ecf5ff;
+      color: #409EFF;
     }
   }
 }

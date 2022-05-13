@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { mainStore } from '@/store'
-import { storeToRefs } from 'pinia'
-import { onMounted } from 'vue'
-const useStore = mainStore();
-const { collapse } = storeToRefs(useStore);
+import {mainStore} from '@/store'
+import {storeToRefs} from 'pinia'
+import {onMounted} from 'vue'
 
+const useStore = mainStore();
+const {collapse} = storeToRefs(useStore);
 
 /**
  * 修改窗口变化菜单自动收缩
@@ -23,7 +23,7 @@ const resizeWidth = () => {
   }
 }
 //父组件中接收数据
-const delivery = (params:string) =>{
+const delivery = (params: string) => {
   console.log(params);
 }
 onMounted(() => {
@@ -35,37 +35,40 @@ onMounted(() => {
   <div class="layout">
     <el-container>
       <el-aside :style="{ 'width': collapse ? '64px' : '256px' }">
-        <Aside :msg="'Hello Vue3 Typescript'" @delivery="delivery" />
+        <Aside :msg="'Hello Vue3 Typescript'" @delivery="delivery"/>
       </el-aside>
       <el-container>
         <el-header>
-          <Header />
+          <Header/>
         </el-header>
         <el-scrollbar>
           <el-main>
-            <router-view />
+            <router-view/>
           </el-main>
         </el-scrollbar>
         <el-footer>
-          <Footer />
+          <Footer/>
         </el-footer>
       </el-container>
     </el-container>
   </div>
 </template>
 
-<style scoped lang="scss">
-$borderColor:#cecece;
+<style lang="scss" scoped>
+$borderColor: #cecece;
+$backgroundColor: #f0f2f5;
 
 .layout {
   display: flex;
   flex: 1;
+  background-color: $backgroundColor;
 
   .el-header {
     display: flex;
     align-items: center;
     border-bottom: 1px solid $borderColor;
     padding-left: 0;
+    background-color: #fff;
   }
 
   .el-aside {
@@ -73,6 +76,7 @@ $borderColor:#cecece;
     transition: all .3s;
     border-right: 1px solid $borderColor;
     overflow-x: hidden;
+    background-color: #fff;
   }
 
   .el-main {
@@ -85,5 +89,6 @@ $borderColor:#cecece;
     align-items: center;
     border-top: 1px solid $borderColor;
   }
+
 }
 </style>

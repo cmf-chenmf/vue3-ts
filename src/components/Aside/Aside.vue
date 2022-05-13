@@ -40,17 +40,11 @@ const fn = () => {
     <div class="aside-menu">
       <el-menu :default-active="router.currentRoute.value.path" class="el-menu-vertical-demo" :collapse="collapse"
                router>
-        <el-menu-item index="/router1">
-          <el-icon>
-            <location/>
-          </el-icon>
-          <span>启用路由一</span>
+        <el-menu-item index="/layout">
+          <span>布局容器</span>
         </el-menu-item>
-        <el-menu-item index="/router2">
-          <el-icon>
-            <icon-menu/>
-          </el-icon>
-          <span>启用路由二</span>
+        <el-menu-item index="/lists">
+          <span>列表展示</span>
         </el-menu-item>
       </el-menu>
     </div>

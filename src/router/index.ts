@@ -1,27 +1,30 @@
 import {createRouter, createWebHistory} from "vue-router";
 
+//页面布局
 const Layout = () => import("@/views/Layout.vue");
+//登录页
 const Login = () => import("@/views/Login.vue");
 
-const Router1 = () => import("@/views/router1/Router.vue");
-const Router2 = () => import("@/views/router2/Router.vue");
+//菜单对应项
+const Design = () => import("@/views/layouts/Design.vue");
+const Lists = () => import("@/views/lists/Lists.vue");
 
 const routes = [
   {
     path: "/",
     name: "Layout",
     component: Layout,
-    redirect: "/router1",
+    redirect: "/layout",
     children: [
       {
-        path: "router1",
-        name: "Router1",
-        component: Router1
+        path: "layout",
+        name: "Layouts",
+        component: Design
       },
       {
-        path: "router2",
-        name: "Router2",
-        component: Router2
+        path: "lists",
+        name: "Lists",
+        component: Lists
       },
     ]
   },
