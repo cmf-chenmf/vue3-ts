@@ -14,7 +14,7 @@ export class Data {
   }
 
   /**
-   * 请求mock.js假数据，但baseUrl要先设置成空
+   * 请求mock.js假数据，但要先将 baseUrl 设置成空
    */
   // static async mockNews(){
   // 	return axios.get("/mock/news")
