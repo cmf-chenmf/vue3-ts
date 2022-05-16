@@ -7,7 +7,6 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Aside: typeof import('./src/components/Aside/Aside.vue')['default']
     BasicLayout: typeof import('./src/components/layouts/BasicLayout.vue')['default']
-    BasicSpace: typeof import('@/components/layouts/SpaceLayout.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElContainer: typeof import('element-plus/es')['ElContainer']
@@ -21,6 +20,7 @@ declare module '@vue/runtime-core' {
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     Footer: typeof import('./src/components/Footer/Footer.vue')['default']
     Header: typeof import('./src/components/Header/Header.vue')['default']
+    HeaderView: typeof import('./src/components/layout/HeaderView.vue')['default']
     HybridLayout: typeof import('./src/components/layouts/HybridLayout.vue')['default']
     OffsetLayout: typeof import('./src/components/layouts/OffsetLayout.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
