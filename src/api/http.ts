@@ -15,6 +15,7 @@ instance.interceptors.request.use(config => {
 
 
 instance.interceptors.response.use(res => {
+  //请求相应成功
   if (res.status === 200) {
     return Promise.resolve(res.data)
   }
