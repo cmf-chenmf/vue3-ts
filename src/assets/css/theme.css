@@ -1,0 +1,7 @@
+html:not(.dark) {
+  --prism-color: #cecece;
+}
+
+html.dark {
+  --prism-color: red;
+}
