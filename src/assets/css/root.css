@@ -1,4 +1,18 @@
 :root {
   --header-height: 55px;
-  --aside-width: 266px;
+  --ly-content-width: 800px;
+}
+
+@media screen and (min-width: 1440px) {
+  :root {
+    --ly-screen-max-width: 1362px;
+    --ly-sidebar-width-small: 234px;
+  }
+}
+
+@media screen and (min-width: 1680px) {
+  :root {
+    --ly-screen-max-width: 1482px;
+    --ly-sidebar-width-small: 290px;
+  }
 }
