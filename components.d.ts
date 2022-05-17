@@ -5,6 +5,7 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     HeaderView: typeof import('./src/components/layout/HeaderView.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
