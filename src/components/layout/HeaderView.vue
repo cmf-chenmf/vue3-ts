@@ -5,7 +5,7 @@
 </template>
 
 <style scoped lang="scss">
-.layout-header{
+.layout-header {
   height: 55px;
   border-bottom: 1px solid #dcdfe6;
 }

@@ -2,7 +2,7 @@
 import {ref, onMounted} from "vue";
 import {mainStore} from '@/store';
 import {storeToRefs} from 'pinia';
-// import {Data} from '@/api/api'
+import {Data} from '@/api/api'
 
 /**
  * 使用下一代Vuex P-i-n-i-a;
@@ -15,10 +15,10 @@ console.log(collapse)
  * 使用封装请求 api（Data模块）
  */
 
-// const getData = async () => {
-//   const {data: result} = await Data.getLists();
-//   console.log(result);
-// }
+const getData = async () => {
+  const {data: result} = await Data.getLists();
+  console.log(result);
+}
 
 /**
  * 定义变量
@@ -26,7 +26,7 @@ console.log(collapse)
 const html = ref<any>(null);
 onMounted(async () => {
   html.value = document.getElementsByTagName('html')[0];
-  // await getData();
+  await getData();
 })
 /**
  * 简单修改主题  项目进行中将使用到 : root 来切换主题
