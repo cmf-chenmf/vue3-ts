@@ -43,13 +43,17 @@ const toggleTheme = () => {
     <div class="layout-view">
       <header class="ly-header" @click="toggleTheme">
         <div class="navbar-wrapper">
-          <div class="header-container">Header</div>
+          <div class="header-container">
+            <HeaderView/>
+          </div>
         </div>
       </header>
-      <aside class="ly-aside">Aside</aside>
+      <aside class="ly-aside">
+        <AsideView/>
+      </aside>
       <main class="ly-main">
         <div class="ly-main-container">
-          <div class="main-content">main-content</div>
+          <div class="main-content">MainView</div>
           <div class="main-aside">
             <div class="main-s-container">main-s-container</div>
           </div>

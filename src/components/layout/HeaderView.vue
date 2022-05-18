@@ -7,6 +7,6 @@
 <style scoped lang="scss">
 .layout-header {
   height: 55px;
-  border-bottom: 1px solid #dcdfe6;
+  border: 1px solid #dcdfe6;
 }
 </style>

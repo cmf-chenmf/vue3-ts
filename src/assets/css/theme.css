@@ -1,7 +1,9 @@
 html:not(.dark) {
-  --prism-color: #cecece;
+  --prism-color: #000;
+  --prism-background-color: #fff;
 }
 
 html.dark {
-  --prism-color: red;
+  --prism-color: #fff;
+  --prism-background-color: #000;
 }
