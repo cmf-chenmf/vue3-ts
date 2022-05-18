@@ -12,11 +12,12 @@ const {collapse} = storeToRefs(store);
 console.log(collapse)
 
 /**
- * 使用封装请求 api
+ * 使用封装请求 api（Data模块）
  */
+
 // const getData = async () => {
 //   const {data: result} = await Data.getLists();
-//   console.log(result)
+//   console.log(result);
 // }
 
 /**
@@ -109,7 +110,6 @@ const toggleTheme = () => {
       padding: 64px 0 96px 64px;
 
       .main-content {
-        width: var(--ly-content-width);
         min-height: 100vh;
         border: 1px solid #cecece;
         height: 3000px;
@@ -133,6 +133,19 @@ const toggleTheme = () => {
 
   }
 
+  @media screen and(min-width: 768px) {
+    .main-content {
+      padding: 48px 32px 96px;
+      width: 100%;
+    }
+  }
+
+  @media screen and(min-width: 960px) {
+    .main-content {
+      padding: 64px 64px 96px;
+      width: 100%;
+    }
+  }
   @media screen and (min-width: 960px) and (min-width: 1440px) {
     .ly-main {
       padding-left: calc((100% - var(--ly-screen-max-width)) / 2 + var(--ly-sidebar-width-small));
@@ -146,6 +159,9 @@ const toggleTheme = () => {
   @media screen and (min-width: 1440px) {
     .main-aside {
       display: block;
+    }
+    .main-content {
+      width: var(--ly-content-width);
     }
   }
   @media screen and (min-width: 1680px) {

@@ -3,6 +3,7 @@
   --ly-content-width: 800px;
 }
 
+/* 适配宽度 */
 @media screen and (min-width: 1440px) {
   :root {
     --ly-screen-max-width: 1362px;
