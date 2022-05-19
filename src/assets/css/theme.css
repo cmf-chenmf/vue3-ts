@@ -1,9 +1,11 @@
 html:not(.dark) {
   --prism-color: #000;
   --prism-background-color: #fff;
+  --el-text-color-secondary: #000;
 }
 
 html.dark {
   --prism-color: #fff;
   --prism-background-color: #000;
+  --prism-scrollar-bg-color: green;
 }

@@ -39,18 +39,19 @@ const toggleTheme = () => {
 </script>
 
 <template>
-  <el-scrollbar>
+  <el-scrollbar :always="true">
     <div class="layout-view">
       <header class="ly-header" @click="toggleTheme">
         <div class="navbar-wrapper">
           <div class="header-container">
             <HeaderView/>
+            <HeaderView/>
           </div>
         </div>
       </header>
-      <aside class="ly-aside">
+      <el-scrollbar class="ly-aside" :always="true">
         <AsideView/>
-      </aside>
+      </el-scrollbar>
       <main class="ly-main">
         <div class="ly-main-container">
           <div class="main-content">MainView</div>
@@ -64,12 +65,12 @@ const toggleTheme = () => {
 </template>
 
 <style scoped lang="scss">
+
 .layout-view {
   height: 100%;
   /* header */
   .ly-header {
     height: var(--header-height);
-    border-bottom: 1px solid #dcdfe6;
     position: fixed;
     width: 100%;
     padding: 0 32px;
@@ -91,16 +92,7 @@ const toggleTheme = () => {
     padding: 48px 32px 0;
     width: 260px;
     border: 1px solid #dcdfe6;
-  }
-
-  /**
-      适配最小宽度
-   */
-  @media screen and (min-width: 1440px) {
-    .ly-aside {
-      padding: 48px 32px 96px calc((100% - var(--ly-screen-max-width)) / 2);
-      width: calc((100% - var(--ly-screen-max-width)) / 2 + var(--ly-sidebar-width-small));
-    }
+    overflow-y: auto;
   }
 
   /* main */
@@ -121,7 +113,8 @@ const toggleTheme = () => {
 
       .main-aside {
         padding-left: 64px;
-        border: 1px solid #dcdfe6;
+        border: 1px solid #cecece;
+        display: none;
 
         .main-s-container {
           position: sticky;
@@ -130,7 +123,7 @@ const toggleTheme = () => {
           padding: 4px 8px 4px 12px;
           margin-bottom: 32px;
           width: 200px;
-          border: 1px solid #dcdfe6;
+          border: 1px solid #000;
         }
       }
     }
@@ -156,18 +149,22 @@ const toggleTheme = () => {
     }
   }
 
-  .main-aside {
-    display: none;
-  }
-
+  /**
+      适配最小宽度 1440px
+   */
   @media screen and (min-width: 1440px) {
+    .ly-aside {
+      padding: 48px 32px 96px calc((100% - var(--ly-screen-max-width)) / 2);
+      width: calc((100% - var(--ly-screen-max-width)) / 2 + var(--ly-sidebar-width-small));
+    }
     .main-aside {
-      display: block;
+      display: block !important;
     }
     .main-content {
       width: var(--ly-content-width);
     }
   }
+
   @media screen and (min-width: 1680px) {
     .main-aside {
       padding-left: 96px;
