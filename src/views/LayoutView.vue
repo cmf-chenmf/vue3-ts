@@ -9,7 +9,8 @@ import {Data} from '@/api/api'
  */
 const store = mainStore();
 const {collapse} = storeToRefs(store);
-console.log(collapse)
+// console.log(collapse.value)
+
 
 /**
  * 使用封装请求 api（Data模块）
@@ -28,6 +29,7 @@ onMounted(async () => {
   html.value = document.getElementsByTagName('html')[0];
   await getData();
 })
+console.log(import.meta.env.MODE)
 /**
  * 简单修改主题  项目进行中将使用到 : root 来切换主题
  */
@@ -45,7 +47,6 @@ const toggleTheme = () => {
         <div class="navbar-wrapper">
           <div class="header-container">
             <HeaderView/>
-            <HeaderView/>
           </div>
         </div>
       </header>
@@ -54,7 +55,7 @@ const toggleTheme = () => {
       </el-scrollbar>
       <main class="ly-main">
         <div class="ly-main-container">
-          <div class="main-content">MainView</div>
+          <div class="main-content">MainView{{ collapse }}</div>
           <div class="main-aside">
             <div class="main-s-container">main-s-container</div>
           </div>

@@ -1,4 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import {ref} from 'vue';
+
+const count = ref<number>(10)
+console.log(count)
+</script>
 
 <template>
   <div class="layout-header">layout-header</div>

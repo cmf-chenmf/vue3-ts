@@ -4,7 +4,7 @@ import {ElMessage} from 'element-plus';
 
 const instance = axios.create({
   timeout: 1000 * 15,//请求超时相应
-  baseURL: 'https://cnodejs.org/api/v1/',//公共url
+  baseURL: import.meta.env.VITE_APP_BASE_API,//公共url
 })
 
 instance.interceptors.request.use(config => {
