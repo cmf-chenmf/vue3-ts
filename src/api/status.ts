@@ -13,9 +13,11 @@ export const showMessage = (status: string | number): string => {
     case 401:
       message = '未授权，请重新登录';
       break;
-    default:
-      message = '连接出错，请联系管理员';
+    case 500:
+      message = '服务器内部错误，请联系管理员';
       break;
+    default:
+      message = '服务器内部错误，请联系管理员';
   }
   return message
 }

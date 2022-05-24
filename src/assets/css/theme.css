@@ -1,9 +1,15 @@
+/**
+黑色主题
+ */
 html:not(.dark) {
   --prism-color: #000;
   --prism-background-color: #fff;
   --el-text-color-secondary: #000;
 }
 
+/**
+白色主题
+ */
 html.dark {
   --prism-color: #fff;
   --prism-background-color: #000;

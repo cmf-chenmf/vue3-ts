@@ -48,6 +48,6 @@ export default defineConfig({
       scss: {
         additionalData: `@import '@/assets/scss/variables.scss';`,
       }
-    }
+    },
   },
 })

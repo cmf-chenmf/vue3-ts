@@ -144,6 +144,7 @@ const toggleTheme = () => {
       width: 100%;
     }
   }
+
   @media screen and (min-width: 960px) and (min-width: 1440px) {
     .ly-main {
       padding-left: calc((100% - var(--ly-screen-max-width)) / 2 + var(--ly-sidebar-width-small));
