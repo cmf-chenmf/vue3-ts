@@ -29,7 +29,7 @@ onMounted(async () => {
   html.value = document.getElementsByTagName('html')[0];
   await getData();
 })
-console.log(import.meta.env.MODE)
+// console.log(import.meta.env.MODE)
 /**
  * 简单修改主题  项目进行中将使用到 : root 来切换主题
  */
