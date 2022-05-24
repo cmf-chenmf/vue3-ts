@@ -1,6 +1,13 @@
 :root {
   --header-height: 55px;
   --ly-content-width: 800px;
+  --ly-sidebar-width-small: 266px
+}
+
+@media screen and(min-width: 960px) {
+  :root {
+    --sidebar-width-sm: 16rem;
+  }
 }
 
 /* 适配宽度 */
