@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import {ref, onMounted} from "vue";
+import {onMounted} from "vue";
 import {mainStore} from '@/store';
 import {storeToRefs} from 'pinia';
-import {Data} from '@/api/api'
+// import {Data} from '@/api/api'
 
 /**
  * 使用下一代Vuex P-i-n-i-a;
@@ -16,34 +16,25 @@ const {collapse} = storeToRefs(store);
  * 使用封装请求 api（Data模块）
  */
 
-const getData = async () => {
-  const {data: result} = await Data.getLists();
-  console.log(result);
-}
+// const getData = async () => {
+//   const {data: result} = await Data.getLists();
+//   console.log(result);
+// }
 
 /**
  * 定义变量
  */
-const html = ref<any>(null);
 onMounted(async () => {
-  html.value = document.getElementsByTagName('html')[0];
-  await getData();
+  // await getData();
 })
 // console.log(import.meta.env.MODE)
-/**
- * 简单修改主题  项目进行中将使用到 : root 来切换主题
- */
-const toggleTheme = () => {
-  const bool = html.value.classList.contains("dark");
-  !bool ? html.value.classList.add("dark") : html.value.classList.remove("dark");
-}
 
 </script>
 
 <template>
   <el-scrollbar :always="true">
     <div class="layout-view">
-      <header class="ly-header" @click="toggleTheme">
+      <header class="ly-header">
         <div class="navbar-wrapper">
           <div class="header-container">
             <HeaderView/>
@@ -94,17 +85,17 @@ const toggleTheme = () => {
     width: 260px;
     border: 1px solid #dcdfe6;
     overflow-y: auto;
+    display: none;
   }
 
   /* main */
   .ly-main {
     padding-top: var(--header-height);
-    padding-left: 260px;
     height: calc(100% - var(--header-height));
 
     .ly-main-container {
       display: flex;
-      padding: 64px 0 96px 64px;
+      padding: 40px 32px;
 
       .main-content {
         min-height: 100vh;
@@ -131,6 +122,14 @@ const toggleTheme = () => {
 
   }
 
+  /**
+  内容区域宽度
+   */
+  @media screen and(max-width: 768px) {
+    .main-content {
+      width: 100%;
+    }
+  }
   @media screen and(min-width: 768px) {
     .main-content {
       padding: 48px 32px 96px;
@@ -143,8 +142,25 @@ const toggleTheme = () => {
       padding: 64px 64px 96px;
       width: 100%;
     }
-  }
+    .ly-aside {
+      display: none;
+    }
+    .ly-main {
+      padding-left: calc(var(--sidebar-width-sm) + 10px);
 
+      .ly-main-container {
+        padding: 40px 64px 96px;
+      }
+    }
+  }
+  @media screen and(min-width: 960px) and(min-width: 1280px) {
+    .ly-main {
+      padding-left: calc(var(--ly-sidebar-width-small) - 6px);
+    }
+    .ly-aside {
+      display: block;
+    }
+  }
   @media screen and (min-width: 960px) and (min-width: 1440px) {
     .ly-main {
       padding-left: calc((100% - var(--ly-screen-max-width)) / 2 + var(--ly-sidebar-width-small));
@@ -165,12 +181,23 @@ const toggleTheme = () => {
     .main-content {
       width: var(--ly-content-width);
     }
+    .ly-main {
+      .ly-main-container {
+        padding: 40px 0 96px 64px;
+      }
+    }
   }
 
   @media screen and (min-width: 1680px) {
-    .main-aside {
-      padding-left: 96px;
-      display: block;
+    .ly-main {
+      .ly-main-container {
+        padding: 40px 0 96px 96px;
+
+        .main-aside {
+          padding-left: 96px;
+          display: block;
+        }
+      }
     }
   }
 
