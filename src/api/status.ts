@@ -19,5 +19,5 @@ export const showMessage = (status: string | number): string => {
     default:
       message = '服务器内部错误，请联系管理员';
   }
-  return message
+  return message;
 }

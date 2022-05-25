@@ -1,9 +1,9 @@
 import axios from 'axios';
-import {showMessage} from './status';
-import {ElMessage} from 'element-plus';
+import { showMessage } from './status';
+import { ElMessage } from 'element-plus';
 
 const instance = axios.create({
-  timeout: 1000 * 15,//请求超时相应
+  timeout: 1000 * 15,//请求超时响应
   baseURL: import.meta.env.VITE_APP_BASE_API,//公共url
 })
 
@@ -23,7 +23,7 @@ instance.interceptors.response.use(res => {
   const {response} = error;
 
   if (response) {
-    // 请求已发出，但是不在2xx的范围
+    // 请求已返回，但是返回状态码不在2xx的范围
     showMessage(response.status);           // 传入响应码，匹配响应码对应信息
     return Promise.reject(response.data);
   } else {
@@ -31,4 +31,4 @@ instance.interceptors.response.use(res => {
   }
 })
 
-export default instance
+export default instance;
