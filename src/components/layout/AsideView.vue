@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 
 const router = useRouter();
+const route = useRoute();
 console.log(router)
 // 左上logo跳转事件
 const leaveEvent = (value: string) => {
@@ -23,11 +24,17 @@ const leaveEvent = (value: string) => {
         <p>下一代前端开发与构建工具</p>
       </div>
     </div>
-    <el-menu class="el-menu-demo">
-      <el-menu-item index="1">首页</el-menu-item>
-      <el-menu-item index="2">Echarts展示</el-menu-item>
-      <el-menu-item index="3">表单页</el-menu-item>
-      <el-menu-item index="4">结果页</el-menu-item>
+    <el-menu class="el-menu-demo" router :default-active="route.fullPath">
+      <el-menu-item index="/index">首页</el-menu-item>
+      <el-menu-item index="/echarts">Echarts展示</el-menu-item>
+      <el-menu-item index="/form">表单页</el-menu-item>
+      <el-sub-menu index="/result">
+        <template #title>
+          <span>结果页</span>
+        </template>
+        <el-menu-item index="/result/success">成功页</el-menu-item>
+        <el-menu-item index="/result/fail">失败页</el-menu-item>
+      </el-sub-menu>
     </el-menu>
   </div>
 </template>

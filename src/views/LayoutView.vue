@@ -46,7 +46,9 @@ onMounted(async () => {
       </el-scrollbar>
       <main class="ly-main">
         <div class="ly-main-container">
-          <div class="main-content">MainView{{ collapse }}</div>
+          <div class="main-content">
+            <router-view/>
+          </div>
           <div class="main-aside">
             <div class="main-s-container">main-s-container</div>
           </div>
