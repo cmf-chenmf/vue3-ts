@@ -1,4 +1,4 @@
-import {createRouter, createWebHistory} from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
 //页面布局
 const LayoutView = () => import("@/views/LayoutView.vue");

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import {onMounted, ref} from "vue";
+import { onMounted, ref } from "vue";
 
 const html = ref<any>(null);
 
 onMounted(async () => {
   html.value = document.getElementsByTagName('html')[0];
-  
+
 })
 /**
  * 简单修改主题  项目进行中将使用到 : root 来切换主题

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import {onMounted} from "vue";
-import {mainStore} from '@/store';
-import {storeToRefs} from 'pinia';
+import { onMounted } from "vue";
+import { mainStore } from '@/store';
+import { storeToRefs } from 'pinia';
 // import {Data} from '@/api/api'
 
 /**
