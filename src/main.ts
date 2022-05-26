@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from '@/router/index'
 import { createPinia } from 'pinia'
 
+// @ts-ignore
+import VueHighcharts from 'vue3-highcharts';
+
 //引入mock
 import "@/mock/mock"
 
@@ -17,4 +20,5 @@ const app = createApp(App)
 
 app.use(router)
 app.use(createPinia())
+app.use(VueHighcharts)
 app.mount('#app')

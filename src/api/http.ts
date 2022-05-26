@@ -21,7 +21,7 @@ instance.interceptors.response.use(res => {
   }
 }, error => {
   const {response} = error;
-
+  
   if (response) {
     // 请求已返回，但是返回状态码不在2xx的范围
     showMessage(response.status);           // 传入响应码，匹配响应码对应信息

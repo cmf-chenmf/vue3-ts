@@ -5,6 +5,7 @@ const LayoutView = () => import("@/views/LayoutView.vue");
 //登录页
 const Login = () => import("@/views/LoginView.vue");
 
+//菜单对应页面
 const IndexView = () => import("@/views/index/IndexView.vue");
 const EchartsView = () => import("@/views/echarts/EchartsView.vue");
 const ResultView = () => import("@/views/result/ResultView.vue");
