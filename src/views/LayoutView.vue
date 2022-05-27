@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
-import { mainStore } from '@/store';
+import { testStore } from '@/stores/test';
 import { storeToRefs } from 'pinia';
 // import {Data} from '@/api/api'
 
 /**
  * 使用下一代Vuex P-i-n-i-a;
  */
-const store = mainStore();
+const store = testStore();
 const {collapse} = storeToRefs(store);
-// console.log(collapse.value)
+console.log(collapse.value)
 
 
 /**
@@ -102,7 +102,7 @@ onMounted(async () => {
       .main-content {
         min-height: 100vh;
         border: 1px solid #cecece;
-        height: 3000px;
+        padding: 20px;
       }
 
       .main-aside {
@@ -151,7 +151,7 @@ onMounted(async () => {
       padding-left: calc(var(--sidebar-width-sm) + 10px);
 
       .ly-main-container {
-        padding: 40px 64px 96px;
+        padding: 64px 32px 96px;
       }
     }
   }

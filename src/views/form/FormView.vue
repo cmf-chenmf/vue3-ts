@@ -37,7 +37,6 @@ let myChart = ref<any>(null);
 const init = () => {
   if (myChart.value === null) {
     myChart = echarts.init(main.value);
-    console.log(Object.prototype.toString.call(myChart))
   }
   myChart.setOption(chartOption.value);
   //自适应大小
