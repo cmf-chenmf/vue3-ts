@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 
-//图表数据
+//图表数据(highcharts)
 const chartOptions = computed(() => ({
   //消除辅助功能警告
   accessibility: {enabled: false},

@@ -2,8 +2,13 @@
 import { onMounted } from "vue";
 import { testStore } from '@/stores/test';
 import { storeToRefs } from 'pinia';
-// import {Data} from '@/api/api'
+import { Data } from '@/api/api'
+import { cartStore } from '@/stores/cart'
 
+const cart = cartStore();
+console.log(cart.getCount)
+cart.setCount(10)
+console.log(cart.count)
 /**
  * 使用下一代Vuex P-i-n-i-a;
  */
@@ -11,21 +16,20 @@ const store = testStore();
 const {collapse} = storeToRefs(store);
 console.log(collapse.value)
 
-
 /**
  * 使用封装请求 api（Data模块）
  */
 
-// const getData = async () => {
-//   const {data: result} = await Data.getLists();
-//   console.log(result);
-// }
+const getData = async () => {
+  const {data: result} = await Data.getLists();
+  console.log(result);
+}
 
 /**
  * 定义变量
  */
 onMounted(async () => {
-  // await getData();
+  await getData();
 })
 // console.log(import.meta.env.MODE)
 
