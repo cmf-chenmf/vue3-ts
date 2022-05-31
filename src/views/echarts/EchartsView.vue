@@ -4,15 +4,15 @@ import { computed } from 'vue';
 //图表数据(highcharts)
 const chartOptions = computed(() => ({
   //消除辅助功能警告
-  accessibility: {enabled: false},
+  accessibility: { enabled: false },
   //隐藏右下角官网地址
-  credits: {enabled: false},
+  credits: { enabled: false },
   //图表的类型
-  chart: {type: 'column'},
+  chart: { type: 'column' },
   //图表的正标题
-  title: {text: '月平均降雨量'},
+  title: { text: '月平均降雨量' },
   //图表的副标题
-  subtitle: {text: '资料来源网络'},
+  subtitle: { text: '资料来源网络' },
   xAxis: {
     categories: [
       '一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'
@@ -58,6 +58,8 @@ const chartOptions = computed(() => ({
 
 <style scoped lang="scss">
 .echarts-view {
-
+  ::v-deep .highcharts-container {
+    z-index: -1;
+  }
 }
 </style>

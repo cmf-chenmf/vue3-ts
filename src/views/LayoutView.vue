@@ -13,7 +13,7 @@ console.log(cart.count)
  * 使用下一代Vuex P-i-n-i-a;
  */
 const store = testStore();
-const {collapse} = storeToRefs(store);
+const { collapse } = storeToRefs(store);
 console.log(collapse.value)
 
 /**
@@ -21,7 +21,7 @@ console.log(collapse.value)
  */
 
 const getData = async () => {
-  const {data: result} = await Data.getLists();
+  const { data: result } = await Data.getLists();
   console.log(result);
 }
 
@@ -73,6 +73,7 @@ onMounted(async () => {
     width: 100%;
     padding: 0 32px;
     background-color: #fff;
+    z-index: 1;
 
     .navbar-wrapper {
       height: 100%;
