@@ -51,7 +51,11 @@ onMounted(async () => {
       <main class="ly-main">
         <div class="ly-main-container">
           <div class="main-content">
-            <router-view/>
+            <router-view v-slot="{ Component }">
+              <transition name="fade" mode="out-in">
+                <component :is="Component"/>
+              </transition>
+            </router-view>
           </div>
           <div class="main-aside">
             <div class="main-s-container">main-s-container</div>
@@ -108,6 +112,20 @@ onMounted(async () => {
         min-height: 100vh;
         border: 1px solid #cecece;
         padding: 20px;
+
+        .fade-enter, .fade-leave-to {
+          transform: scale(0.9);
+          opacity: 0;
+        }
+
+        .fade-enter-to, .fade-leave {
+          transform: scale(1);
+          opacity: 1;
+        }
+
+        .fade-enter-active, .fade-leave-active {
+          transition: all 0.3s;
+        }
       }
 
       .main-aside {
