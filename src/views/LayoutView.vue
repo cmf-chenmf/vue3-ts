@@ -6,15 +6,15 @@ import { Data } from '@/api/api'
 import { cartStore } from '@/stores/cart'
 
 const cart = cartStore();
-console.log(cart.getCount)
+// console.log(cart.getCount)
 cart.setCount(10)
-console.log(cart.count)
+// console.log(cart.count)
 /**
  * 使用下一代Vuex P-i-n-i-a;
  */
 const store = testStore();
 const { collapse } = storeToRefs(store);
-console.log(collapse.value)
+// console.log(collapse.value)
 
 /**
  * 使用封装请求 api（Data模块）
@@ -22,7 +22,7 @@ console.log(collapse.value)
 
 const getData = async () => {
   const { data: result } = await Data.getLists();
-  console.log(result);
+  // console.log(result);
 }
 
 /**
@@ -41,19 +41,19 @@ onMounted(async () => {
       <header class="ly-header">
         <div class="navbar-wrapper">
           <div class="header-container">
-            <HeaderView/>
+            <HeaderView />
           </div>
         </div>
       </header>
       <el-scrollbar class="ly-aside" :always="true">
-        <AsideView/>
+        <AsideView />
       </el-scrollbar>
       <main class="ly-main">
         <div class="ly-main-container">
           <div class="main-content">
             <router-view v-slot="{ Component }">
               <transition name="fade" mode="out-in">
-                <component :is="Component"/>
+                <component :is="Component" />
               </transition>
             </router-view>
           </div>
@@ -67,9 +67,9 @@ onMounted(async () => {
 </template>
 
 <style scoped lang="scss">
-
 .layout-view {
   height: 100%;
+
   /* header */
   .ly-header {
     height: var(--header-height);
@@ -113,17 +113,20 @@ onMounted(async () => {
         border: 1px solid #cecece;
         padding: 20px;
 
-        .fade-enter, .fade-leave-to {
+        .fade-enter,
+        .fade-leave-to {
           transform: scale(0.9);
           opacity: 0;
         }
 
-        .fade-enter-to, .fade-leave {
+        .fade-enter-to,
+        .fade-leave {
           transform: scale(1);
           opacity: 1;
         }
 
-        .fade-enter-active, .fade-leave-active {
+        .fade-enter-active,
+        .fade-leave-active {
           transition: all 0.3s;
         }
       }
@@ -155,6 +158,7 @@ onMounted(async () => {
       width: 100%;
     }
   }
+
   @media screen and(min-width: 768px) {
     .main-content {
       padding: 48px 32px 96px;
@@ -167,9 +171,11 @@ onMounted(async () => {
       padding: 64px 64px 96px;
       width: 100%;
     }
+
     .ly-aside {
       display: none;
     }
+
     .ly-main {
       padding-left: calc(var(--sidebar-width-sm) + 10px);
 
@@ -178,14 +184,17 @@ onMounted(async () => {
       }
     }
   }
+
   @media screen and(min-width: 960px) and(min-width: 1280px) {
     .ly-main {
       padding-left: calc(var(--ly-sidebar-width-small) - 6px);
     }
+
     .ly-aside {
       display: block;
     }
   }
+
   @media screen and (min-width: 960px) and (min-width: 1440px) {
     .ly-main {
       padding-left: calc((100% - var(--ly-screen-max-width)) / 2 + var(--ly-sidebar-width-small));
@@ -200,12 +209,15 @@ onMounted(async () => {
       padding: 48px 32px 96px calc((100% - var(--ly-screen-max-width)) / 2);
       width: calc((100% - var(--ly-screen-max-width)) / 2 + var(--ly-sidebar-width-small));
     }
+
     .main-aside {
       display: block !important;
     }
+
     .main-content {
       width: var(--ly-content-width);
     }
+
     .ly-main {
       .ly-main-container {
         padding: 40px 0 96px 64px;

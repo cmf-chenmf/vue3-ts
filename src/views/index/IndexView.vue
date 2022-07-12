@@ -1,7 +1,10 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="index-view">IndexView</div>
+  <div class="index-view">
+    <VueAutoScroll></VueAutoScroll>
+  </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+</style>

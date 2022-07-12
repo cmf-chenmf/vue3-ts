@@ -55,6 +55,7 @@ const routes = [
     name: "Login",
     component: Login,
   },
+  { path: '/:pathMatch(.*)*', name: 'NotFound', component: FailView }
 ];
 
 const router = createRouter({

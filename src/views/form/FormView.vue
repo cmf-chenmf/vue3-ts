@@ -14,7 +14,7 @@ onMounted(() => {
 //echarts展示数据
 const data = ref([15, 15, 6, 15, 15, 64])
 const chartOption = computed(() => ({
-  title: {text: "标题"},
+  title: { text: "标题" },
   tooltip: {},
   legend: {
     data: ["销量"]
@@ -54,4 +54,5 @@ const init = () => {
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+</style>

@@ -28,7 +28,7 @@ const chartOptions = computed(() => ({
   tooltip: {
     headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
     pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-        '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+      '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
     footerFormat: '</table>',
     shared: true,
     useHTML: true
@@ -51,14 +51,14 @@ const chartOptions = computed(() => ({
   <div class="echarts-view">
     <div class="column">
       <vue-highchart type="chart" :options="chartOptions" :redrawOnUpdate="true" :oneToOneUpdate="false"
-                     :animateOnUpdate="true" :accessibility.enabled="false"></vue-highchart>
+        :animateOnUpdate="true" :accessibility.enabled="false"></vue-highchart>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .echarts-view {
-  ::v-deep .highcharts-container {
+  ::v-deep(.highcharts-container) {
     z-index: -1;
   }
 }

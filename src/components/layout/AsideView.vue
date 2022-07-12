@@ -3,7 +3,7 @@ import { useRouter, useRoute } from 'vue-router'
 
 const router = useRouter();
 const route = useRoute();
-console.log(router)
+// console.log(router)
 // 左上logo跳转事件
 const leaveEvent = (value: string) => {
   const href = value === 'vue' ? "https://v3.cn.vuejs.org/" : "https://cn.vitejs.dev/"
@@ -42,7 +42,9 @@ const leaveEvent = (value: string) => {
 <style scoped lang="scss">
 .aside-view {
   .logo {
-    .vue-logo, .vite-logo {
+
+    .vue-logo,
+    .vite-logo {
       margin: 8px 0;
       border: 1px solid #dcdfe6;
       padding: 10px;

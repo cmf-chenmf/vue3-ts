@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     HeaderView: typeof import('./src/components/layout/HeaderView.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    VueAutoScroll: typeof import('./src/components/scroll/VueAutoScroll.vue')['default']
   }
 }
 
